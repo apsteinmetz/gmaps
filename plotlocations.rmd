@@ -185,7 +185,7 @@ On this map we can plot different types of plot with the regular ggplot2 syntax.
 ```{r}
 
 
-US <- get_map(location = 'US', zoom = 4)
+US <- get_map(location = 'London, UK', zoom = 13)
 
 ggmap(US) + geom_point(data = loc, aes(x = lon, y = lat), alpha = 0.5, color = "red") + 
   theme(legend.position = "right") + 
@@ -227,7 +227,7 @@ We can also plot the velocity of each data point:
 
 loc_2 <- loc[which(!is.na(loc$velocity)), ]
 
-NYC <- get_map(location = 'New York,NY', zoom = 10)
+NYC <- get_map(location = 'New York,NY', zoom = 11)
 
 ggmap(NYC) + geom_point(data = loc_2, aes(x = lon, y = lat, color = velocity), alpha = 0.3) + 
   theme(legend.position = "right") + 
